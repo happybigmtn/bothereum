@@ -28,7 +28,7 @@ Bothereum/v1.0.0-stable-xxxxx/linux-amd64/go1.21
 
 | Property | Value |
 |----------|-------|
-| Symbol | BOTH |
+| Symbol | BETH |
 | Name | Bothereum |
 | Decimals | 18 |
 | Smallest unit | wei |

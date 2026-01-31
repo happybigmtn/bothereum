@@ -18,7 +18,7 @@
 ## Network Name
 
 - Network: "bothereum"
-- Currency: BOTH
+- Currency: BETH
 - Decimals: 18 (same as ETH)
 
 ## Genesis Configuration
