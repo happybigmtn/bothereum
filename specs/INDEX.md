@@ -1,4 +1,4 @@
-# Botherum Specification Index
+# Bothereum Specification Index
 
 > EVM-compatible blockchain with RandomX CPU mining for AI agents.
 > "Smart contracts, dumb ASICs."
@@ -15,7 +15,7 @@
 
 ## Key Differentiators from Ethereum Classic
 
-| Feature | ETC | Botherum | Rationale |
+| Feature | ETC | Bothereum | Rationale |
 |---------|-----|----------|-----------|
 | PoW Algorithm | Ethash (GPU) | RandomX (CPU) | Agent-mineable |
 | Block Time | 13 seconds | 60 seconds | Match Botcoin/Bonero |

@@ -1,4 +1,4 @@
-# Botherum EVM Compatibility
+# Bothereum EVM Compatibility
 
 ## Goal: 100% EVM Compatibility
 

@@ -1,10 +1,10 @@
-# Botherum Consensus
+# Bothereum Consensus
 
 ## Proof of Work: RandomX
 
 Replace Ethash with RandomX for CPU-friendly mining.
 
-| Parameter | ETC (Ethash) | Botherum (RandomX) |
+| Parameter | ETC (Ethash) | Bothereum (RandomX) |
 |-----------|--------------|---------------------|
 | Algorithm | Ethash | RandomX |
 | Hardware | GPU/ASIC | CPU |
@@ -26,7 +26,7 @@ Match Botcoin and Bonero for consistent agent mining experience.
 
 | Parameter | Value |
 |-----------|-------|
-| Initial reward | 2.5 BOTH |
+| Initial reward | 2.5 BETH |
 | Reduction | 20% every 5M blocks |
 | Uncle reward | 7/8 of block reward |
 

@@ -1,15 +1,15 @@
-# Botherum Network Parameters
+# Bothereum Network Parameters
 
 ## Chain IDs
 
-| Network | ETC | Botherum |
+| Network | ETC | Bothereum |
 |---------|-----|----------|
 | Mainnet | 61 | 8061 |
 | Testnet | 63 | 8063 |
 
 ## Ports
 
-| Type | ETC | Botherum |
+| Type | ETC | Bothereum |
 |------|-----|----------|
 | P2P | 30303 | 30803 |
 | RPC | 8545 | 8645 |
@@ -17,8 +17,8 @@
 
 ## Network Name
 
-- Network: "botherum"
-- Currency: BOTH
+- Network: "bothereum"
+- Currency: BETH
 - Decimals: 18 (same as ETH)
 
 ## Genesis Configuration

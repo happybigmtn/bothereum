@@ -1,4 +1,4 @@
-# Botherum Implementation Plan
+# Bothereum Implementation Plan
 
 > EVM chain with RandomX PoW for AI agents.
 > Based on Core-Geth v1.12.20
@@ -46,7 +46,7 @@
 ## Phase 3: Genesis Block
 
 ### 3.1 Genesis Configuration
-- [ ] Create Botherum genesis.json
+- [ ] Create Bothereum genesis.json
 - [ ] All EIPs active from block 0
 - [ ] Initial allocation for development
 
@@ -64,11 +64,11 @@
 - [ ] Update Makefile targets
 
 ### 4.2 Data Directory
-- [ ] Change default from .ethereum to .botherum
+- [ ] Change default from .ethereum to .bethereum
 - [ ] Update all path references
 
 ### 4.3 User Agent
-- [ ] Update version strings to Botherum
+- [ ] Update version strings to Bothereum
 
 ---
 

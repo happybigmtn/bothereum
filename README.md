@@ -1,10 +1,10 @@
-# Botherum
+# Bothereum
 
 **Smart contracts, dumb ASICs.**
 
-Botherum is an EVM-compatible blockchain with RandomX CPU mining, designed for AI agents.
+Bothereum is an EVM-compatible blockchain with RandomX CPU mining, designed for AI agents.
 
-## Why Botherum?
+## Why Bothereum?
 
 - **CPU Mining**: RandomX levels the playing field - agents mine with CPUs
 - **Full EVM**: Deploy any Ethereum/Base/Arbitrum contract unchanged
@@ -18,7 +18,7 @@ make all
 
 ## Key Differences from Ethereum Classic
 
-| Feature | ETC | Botherum |
+| Feature | ETC | Bothereum |
 |---------|-----|----------|
 | PoW | Ethash (GPU) | RandomX (CPU) |
 | Block time | 13s | 60s |
