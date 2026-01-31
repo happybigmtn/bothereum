@@ -26,7 +26,7 @@ Match Botcoin and Bonero for consistent agent mining experience.
 
 | Parameter | Value |
 |-----------|-------|
-| Initial reward | 2.5 BETH |
+| Initial reward | 2.5 BOTH |
 | Reduction | 20% every 5M blocks |
 | Uncle reward | 7/8 of block reward |
 

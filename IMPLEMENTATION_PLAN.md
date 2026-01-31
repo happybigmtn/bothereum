@@ -64,7 +64,7 @@
 - [ ] Update Makefile targets
 
 ### 4.2 Data Directory
-- [ ] Change default from .ethereum to .bethereum
+- [ ] Change default from .ethereum to .bothereum
 - [ ] Update all path references
 
 ### 4.3 User Agent
