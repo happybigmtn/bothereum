@@ -1,59 +1,101 @@
-# AGENTS.md - Botcoin Build Guide
+# AGENTS.md - Bothereum Build Guide
 
-## Build & Run
+## Overview
 
-Botcoin is a Bitcoin Core fork using CMake. Build with:
+Bothereum is an EVM-compatible blockchain with RandomX CPU mining for AI agents.
+Based on Core-Geth (Ethereum Classic client).
+
+## Quick Reference
 
 ```bash
-# Dependencies (Ubuntu/Debian)
-sudo apt-get install build-essential cmake pkg-config \
-    python3 libssl-dev libevent-dev libboost-all-dev \
-    libsqlite3-dev
+# Build
+go build -o build/bin/both ./cmd/geth
 
-# Dependencies (Arch Linux)
-sudo pacman -S cmake boost libevent openssl sqlite
+# Test
+go test ./...
 
-# Build (CMake)
-cmake -B build
-cmake --build build -j$(nproc)
-
-# Binaries will be in build/bin/
+# Run devnet
+./build/bin/both --dev --http --http.port 8645
 ```
 
-## Validation
+## Implementation Plan
 
-Run these after implementing to get immediate feedback:
+Read `specs/IMPLEMENTATION_PLAN.md` for the full build guide.
 
-- Build: `cmake --build build -j$(nproc)`
-- Unit tests: `ctest --test-dir build --output-on-failure`
-- Specific unit test: `./build/bin/test_bitcoin --run_test=<suite>`
-- Functional tests: `./test/functional/test_runner.py`
-- Specific functional test: `./test/functional/<test>.py`
+### Phases
 
-## Binaries
+1. **RandomX Consensus** - Replace Ethash with RandomX
+2. **Network Parameters** - Chain ID 8061, ports, genesis
+3. **Branding** - Rename geth → both
+4. **Build & Test** - Ensure everything compiles and passes
+5. **Deployment** - Deploy to Contabo mining fleet
+6. **Smart Contracts** - wBOT, sBOT, Casino, Staking
 
-After build, binaries are in `build/bin/`:
-- `botcoind` - Full node daemon
-- `botcoin-cli` - Command-line RPC client
-- `botcoin-tx` - Transaction utility
-- `botcoin-wallet` - Wallet utility
-- `botcoin-util` - Miscellaneous utility
+### Current Focus
 
-## Operational Notes
+Check `specs/IMPLEMENTATION_PLAN.md` for current acceptance criteria.
 
-- Source is in `src/`
-- Branding: Bitcoin → Botcoin complete for core binaries
-- RandomX integration pending (replacing SHA-256d)
-- Data directory: `~/.botcoin` (Linux), `~/Library/Application Support/Botcoin` (macOS)
-- Config file: `botcoin.conf`
+## Key Specifications
+
+| Spec | Description |
+|------|-------------|
+| `specs/INDEX.md` | Overview and status |
+| `specs/IMPLEMENTATION_PLAN.md` | Detailed build guide |
+| `specs/consensus.md` | RandomX PoW details |
+| `specs/network.md` | Network parameters |
+| `specs/casino-contracts.md` | Zero-edge roulette |
+| `specs/staking-contracts.md` | sBOT yield system |
+
+## Automated Build Loop
+
+```bash
+# Run Claude Code in a loop to implement phases
+./scripts/loopclaude.sh 1  # Start with phase 1
+```
+
+The loop script:
+- Reads the implementation plan
+- Works through acceptance criteria
+- Commits progress
+- Advances to next phase when complete
 
 ## Key Files to Modify
 
-- `src/kernel/chainparams.cpp` - Network parameters, genesis block
-- `src/consensus/params.h` - Consensus rules
-- `src/pow.cpp` - Proof of work (RandomX integration)
-- `src/validation.cpp` - Block validation
-- `CMakeLists.txt` - Build configuration, client name
-- `src/CMakeLists.txt` - Binary target names
-- `src/clientversion.cpp` - User agent
-- `src/common/args.cpp` - Config filename, data directory
+| Component | Primary File |
+|-----------|-------------|
+| RandomX engine | `consensus/randomx/consensus.go` (create) |
+| Chain config | `params/config.go` |
+| Genesis | `core/genesis.go` |
+| CLI | `cmd/geth/main.go` → `cmd/both/main.go` |
+| Networking | `p2p/server.go` |
+
+## Dependencies
+
+- Go 1.21+
+- RandomX library (github.com/tevador/RandomX)
+- Standard Go toolchain
+
+## Network Details
+
+| Parameter | Value |
+|-----------|-------|
+| Chain ID | 8061 |
+| P2P Port | 30803 |
+| RPC Port | 8645 |
+| WS Port | 8646 |
+| Block Time | 60 seconds |
+| Block Reward | 2.5 BETH |
+
+## Related Chains
+
+| Chain | Purpose |
+|-------|---------|
+| Botcoin | L1 value transfer |
+| Bothereum | EVM contracts |
+| Bonero | Privacy |
+| Botcash | Messaging |
+| Botchan | Cross-chain swaps |
+
+---
+
+*Build the EVM layer for the agent economy.*

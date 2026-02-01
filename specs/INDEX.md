@@ -3,15 +3,33 @@
 > EVM-compatible blockchain with RandomX CPU mining for AI agents.
 > "Smart contracts, dumb ASICs."
 
+## Implementation Status
+
+| Phase | Spec | Status |
+|-------|------|--------|
+| **Phase 1** | RandomX Consensus | 📝 Ready |
+| **Phase 2** | Network Parameters | 📝 Ready |
+| **Phase 3** | Branding & CLI | 📝 Ready |
+| **Phase 4** | Build & Test | 📝 Ready |
+| **Phase 5** | Deployment | ⏳ Pending |
+| **Phase 6** | Smart Contracts | 📝 Ready |
+
 ## Core Specifications
 
-| Specification | File | Status | Description |
-|--------------|------|--------|-------------|
-| **Network** | [network.md](network.md) | 📝 Draft | Ports, chain ID, network params |
-| **Consensus** | [consensus.md](consensus.md) | 📝 Draft | RandomX PoW, block time |
-| **Genesis** | [genesis.md](genesis.md) | 📝 Draft | Genesis block configuration |
-| **Branding** | [branding.md](branding.md) | 📝 Draft | Binary names, data directories |
-| **EVM Compatibility** | [evm.md](evm.md) | 📝 Draft | Base/Ethereum compatibility |
+| Specification | File | Description |
+|--------------|------|-------------|
+| **Implementation Plan** | [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) | Master build guide |
+| **Network** | [network.md](network.md) | Ports, chain ID, network params |
+| **Consensus** | [consensus.md](consensus.md) | RandomX PoW, block time |
+| **Branding** | [branding.md](branding.md) | Binary names, data directories |
+| **EVM Compatibility** | [evm.md](evm.md) | Base/Ethereum compatibility |
+
+## Smart Contract Specifications
+
+| Specification | File | Description |
+|--------------|------|-------------|
+| **Casino Contracts** | [casino-contracts.md](casino-contracts.md) | Zero-edge roulette, wBOT |
+| **Staking Contracts** | [staking-contracts.md](staking-contracts.md) | sBOT, yield distribution |
 
 ## Key Differentiators from Ethereum Classic
 
@@ -44,12 +62,43 @@
 - Block time
 - Network identifiers
 
-## Fork Strategy
+## Contract Addresses (Mainnet - TBD)
 
-Based on Core-Geth v1.12.20 (ETC client):
-1. Replace Ethash with RandomX in consensus layer
-2. Update network parameters
-3. Generate new genesis block
-4. Rebrand binaries and config
+| Contract | Address |
+|----------|---------|
+| wBOT | TBD |
+| sBOT | TBD |
+| StakingManager | TBD |
+| ZeroEdgeRoulette | TBD |
+| Governor | TBD |
 
-~Similar effort to Botcoin.
+## Quick Start
+
+```bash
+# Clone
+git clone https://github.com/happybigmtn/bothereum.git
+cd bothereum
+
+# Build
+go build -o build/bin/both ./cmd/geth
+
+# Run devnet
+./build/bin/both --dev --http --http.port 8645
+
+# Run mainnet
+./build/bin/both --datadir ~/.bothereum --http
+```
+
+## Related Repositories
+
+| Chain | Repo | Purpose |
+|-------|------|---------|
+| Botcoin | github.com/happybigmtn/botcoin | L1 value transfer |
+| **Bothereum** | github.com/happybigmtn/bothereum | EVM contracts |
+| Bonero | github.com/happybigmtn/bonero | Privacy |
+| Botcash | github.com/happybigmtn/botcash | Messaging |
+| Botchan | github.com/happybigmtn/botchan | Cross-chain |
+
+---
+
+*Build the EVM layer for the agent economy.*
